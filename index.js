@@ -115,21 +115,21 @@ export default class ExpoMixpanelAnalytics {
       data.properties.distinct_id = this.userId;
     }
     data.properties.token = this.token;
-    data.properties.user_agent = this.userAgent;
-    data.properties.app_name = this.appName;
-    data.properties.app_id = this.appId;
-    data.properties.app_version = this.appVersion;
-    data.properties.screen_size = this.screenSize;
-    data.properties.client_id = this.clientId;
-    data.properties.device_name = this.deviceName;
+    data.properties['User Agent']= this.userAgent;
+    data.properties['App Name'] = this.appName;
+    data.properties['App ID'] = this.appId;
+    data.properties['App Version'] = this.appVersion;
+    data.properties['Screen Size'] = this.screenSize;
+    data.properties['Client ID'] = this.clientId;
+    data.properties['Device Name'] = this.deviceName;
     if (this.platform) {
-      data.properties.platform = this.platform;
+      data.properties['Platform'] = this.platform;
     }
     if (this.model) {
-      data.properties.model = this.model;
+      data.properties['Model'] = this.model;
     }
     if (this.osVersion) {
-      data.properties.os_version = this.osVersion;
+      data.properties['OS Version'] = this.osVersion;
     }
 
     data = new Buffer(JSON.stringify(data)).toString('base64');
